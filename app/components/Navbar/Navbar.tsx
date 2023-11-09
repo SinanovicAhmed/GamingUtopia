@@ -7,19 +7,19 @@ import NavbarActions from "./NavbarActions";
 
 const Navbar = () => {
   return (
-    <nav className="z-50 flex justify-between items-center sticky top-0 w-full py-2 bg-primary-color px-10">
+    <nav className="z-50 flex justify-between items-center sticky top-0 w-full py-2 bg-primary-color px-2 sm:px-10">
       <Image
         className="hidden md:block"
         src={logo}
         width={200}
-        objectFit="contain"
+        style={{ objectFit: "cover" }}
         alt="gaming utopia logo"
       />
       <Image
         className="block md:hidden"
         src={logonotext}
         width={50}
-        objectFit="contain"
+        style={{ objectFit: "cover" }}
         alt="gaming utopia logo"
       />
 

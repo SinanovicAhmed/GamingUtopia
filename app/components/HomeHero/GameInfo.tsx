@@ -24,7 +24,6 @@ const GameInfo = ({ game }: { game: IResult }) => {
         <button className="px-4 py-1 hover:brightness-75 text-white bg-secondary-color rounded-md">
           Details
         </button>
-        <FavouriteButton isFavourite={false} />
       </span>
     </div>
   );

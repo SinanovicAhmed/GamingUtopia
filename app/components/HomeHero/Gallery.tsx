@@ -11,17 +11,21 @@ const Gallery = ({ games }: { games: IResult[] }) => {
   return (
     <>
       <div className="w-full h-[600px] relative">
+        <div className="absolute top-0 z-10 w-full h-full bg-gradient-to-b from-transparent to-primary-color"></div>
         <Navigation imageIndex={gameIndex} setImageIndex={setGameIndex} />
         <GameInfo game={games[gameIndex]} />
-        <div className="absolute top-0 z-10 w-full h-full bg-gradient-to-b from-transparent to-primary-color"></div>
         {games[gameIndex].background_image && (
-          <Image
-            src={games[gameIndex].background_image}
-            fill
-            priority={true}
-            style={{ objectFit: "cover" }}
-            alt="game background"
-          />
+          <div
+            key={gameIndex}
+            className="relative w-full h-full animate-fadeinout bg-gradient-to-b from-transparent to-primary-color"
+          >
+            <Image
+              src={games[gameIndex].background_image}
+              fill
+              style={{ objectFit: "cover" }}
+              alt="game background"
+            />
+          </div>
         )}
       </div>
     </>

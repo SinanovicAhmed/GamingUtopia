@@ -3,7 +3,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 
 const Search = () => {
   return (
-    <div className="flex w-full max-w-[400px] h-[30px] mx-5">
+    <div className="margin-auto flex w-full max-w-[400px] h-[30px] mx-5">
       <input
         className="w-full p-1 bg-transparent border-[1px] text-sm md:text-md border-slate-500 text-white rounded-tl-lg rounded-bl-lg"
         type="text"

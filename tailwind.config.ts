@@ -12,6 +12,15 @@ const config: Config = {
         "primary-color": "#24252b",
         "secondary-color": "#fe5000",
       },
+      keyframes: {
+        fade: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+      },
+      animation: {
+        fadeinout: "fade 0.5s linear",
+      },
     },
   },
   plugins: [],
