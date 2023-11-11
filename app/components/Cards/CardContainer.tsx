@@ -37,11 +37,15 @@ const getGames = async (options: IOptions) => {
 };
 
 const getFavourites = async (email: string) => {
-  const res = await fetch("http://localhost:3000/api/favourites/" + email, {
-    next: { tags: ["favourites"] },
-  });
-  const { data }: { data: IFavouriteGames[] } = await res.json();
-  return data;
+  try {
+    const res = await fetch("http://localhost:3000/api/favourites/" + email, {
+      next: { tags: ["favourites"] },
+    });
+    const { data }: { data: IFavouriteGames[] } = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const CardContainer = async ({ options, title }: { options: IOptions; title: string }) => {

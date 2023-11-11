@@ -2,10 +2,17 @@
 import { useSession, signIn, signOut } from "next-auth/react";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const NavbarActions = () => {
   const { data: session, status } = useSession();
   const [toggleDropdown, setToggleDropdown] = useState(false);
+  const router = useRouter();
+
+  const navigateFavourite = () => {
+    router.push("/favourites");
+    setToggleDropdown(false);
+  };
 
   if (session && session.user) {
     return (
@@ -26,6 +33,12 @@ const NavbarActions = () => {
         {toggleDropdown && (
           <div className="absolute top-16 right-0 py-2 px-5 bg-primary-color ">
             <p className="border-b-2 border-slate-700 text-white">{session.user.name}</p>
+            <button
+              onClick={() => navigateFavourite()}
+              className="w-full font-bold text-secondary-color py-2 hover:brightness-75"
+            >
+              Favourites
+            </button>
             <button
               onClick={() => signOut()}
               className="w-full font-bold text-secondary-color py-2 hover:brightness-75"

@@ -4,6 +4,6 @@ export interface IFavouriteGames {
   user_email: string;
   image_url: string;
   game_title: string;
-  rating: number;
+  rating: { $numberDecimal: number };
   platforms: string[];
 }
