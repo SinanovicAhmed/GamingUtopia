@@ -1,3 +1,11 @@
+export interface IGamesSearch {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: IResult[];
+  user_platforms: boolean;
+}
+
 export interface IGames {
   count: number;
   next: string;

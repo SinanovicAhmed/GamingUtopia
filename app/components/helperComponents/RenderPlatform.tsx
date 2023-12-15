@@ -25,7 +25,7 @@ const RenderPlatform = ({ platforms }: { platforms: ParentPlatform[] }) => {
 
   return (
     <div className="flex items-center gap-1">
-      {platforms.map(
+      {platforms?.map(
         (platform) =>
           getPlatformIcon(platform.platform.name) && (
             <span key={platform.platform.id}>{getPlatformIcon(platform.platform.name)}</span>
