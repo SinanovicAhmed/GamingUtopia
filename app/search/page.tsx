@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useSearchParams } from "next/navigation";
+import React from "react";
 import SearchedGamesContainer from "../components/Cards/SearchedGamesContainer";
 
 const SearchPage = ({ searchParams }: { searchParams?: { [key: string]: string } }) => {

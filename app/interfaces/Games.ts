@@ -73,6 +73,7 @@ export interface IResult {
   tags: Genre[];
   esrb_rating: EsrbRating | null;
   short_screenshots: ShortScreenshot[];
+  description_raw?: string;
 }
 
 export interface AddedByStatus {
@@ -150,4 +151,18 @@ export interface ShortScreenshot {
 export interface Store {
   id: number;
   store: Genre;
+}
+
+export interface IAchievments {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: IAchievment[];
+}
+
+export interface IAchievment {
+  id: number;
+  name: string;
+  description: string;
+  image: string;
 }
