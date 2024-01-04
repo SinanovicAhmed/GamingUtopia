@@ -3,6 +3,7 @@ import { IResult } from "@/app/interfaces/Games";
 import React from "react";
 import Image from "next/image";
 import Achievments from "@/app/components/helperComponents/Achievments";
+import RedditGame from "@/app/components/helperComponents/RedditGame";
 
 const getDetails = async (id: string) => {
   try {
@@ -37,9 +38,13 @@ const GameDetail = async ({ searchParams }: { searchParams?: { [key: string]: st
           />
         )}
       </div>
-      <p className="text-white font-light text-justify leading-tight py-3">{game?.description_raw}</p>
-      <h2 className="text-white text-lg font-bold pb-2">Achievements</h2>
+      <p className="text-white text-sm font-light text-justify leading-tight pt-3">{game?.description_raw}</p>
+      <h2 className="text-white text-lg font-bold py-6">Achievements</h2>
       <Achievments id={game?.id!} />
+      <h2 className="text-white text-lg font-bold py-6">
+        Recent reddit posts about <span className="underline">{game?.name}</span>
+      </h2>
+      <RedditGame id={game?.id!} />
     </div>
   );
 };

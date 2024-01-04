@@ -166,3 +166,14 @@ export interface IAchievment {
   description: string;
   image: string;
 }
+
+export interface IRedditPosts {
+  id: number;
+  name: string;
+  text: string;
+  image: string;
+  url: string;
+  username: string;
+  username_url: string;
+  created: string;
+}

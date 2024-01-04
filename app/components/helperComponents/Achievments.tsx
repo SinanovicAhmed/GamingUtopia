@@ -18,9 +18,9 @@ const Achievments = async ({ id }: { id: number }) => {
   const achievments = await getAchievments(id);
 
   return (
-    <div className="flex flex-wrap gap-3 justify-between">
+    <div className="flex flex-wrap gap-3 justify-between transition-all">
       {achievments?.results.map((achievment) => (
-        <div className="w-20 overflow-clip" key={achievment.id}>
+        <div className="group w-20 overflow-clip" key={achievment.id}>
           <div className="w-20 h-20 relative">
             <Image
               src={achievment.image}
@@ -30,6 +30,9 @@ const Achievments = async ({ id }: { id: number }) => {
             />
           </div>
           <h2 className="truncate text-sm text-white">{achievment.name}</h2>
+          <p className="opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto text-[10px] text-gray-500 transition-all">
+            {achievment.description}
+          </p>
         </div>
       ))}
     </div>
