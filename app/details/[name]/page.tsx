@@ -22,7 +22,7 @@ const GameDetail = async ({ searchParams }: { searchParams?: { [key: string]: st
       <h2 className="text-md md:text-3xl text-white font-bold">{game?.name}</h2>
       <div className="flex gap-5 items-center pb-5">
         <RenderPlatform platforms={game?.parent_platforms!} />
-        <p className="text-white">{game?.genres[1].name}</p>
+        <p className="text-white">{game?.genres[0]?.name}</p>
         <p className="bg-slate-700 text-slate-300 text-sm font-bold rounded-sm px-1">{game?.rating}</p>
       </div>
       <div className="w-full h-[400px] relative">

@@ -3,6 +3,7 @@ import { IFavouriteGames } from "@/app/interfaces/Favourites";
 import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const FavouriteCard = ({ game }: { game: IFavouriteGames }) => {
   const router = useRouter();
@@ -32,9 +33,15 @@ const FavouriteCard = ({ game }: { game: IFavouriteGames }) => {
         >
           Remove favourite
         </button>
-        <button className="px-2 py-1 bg-secondary-color rounded-md text-white text-sm hover:brightness-75">
+        <Link
+          href={{
+            pathname: `/details/${game.game_title}`,
+            query: { id: game.game_id },
+          }}
+          className="px-2 py-1 text-center bg-secondary-color rounded-md text-white text-sm hover:brightness-75"
+        >
           Details
-        </button>
+        </Link>
       </div>
     </div>
   );
