@@ -18,7 +18,7 @@ const getDetails = async (id: string) => {
 const GameDetail = async ({ searchParams }: { searchParams?: { [key: string]: string } }) => {
   const game = await getDetails(searchParams?.id!);
   return (
-    <div className="w-full bg-primary-color px-40">
+    <div className="w-full bg-primary-color px-10 md:px-40">
       <h2 className="text-md md:text-3xl text-white font-bold">{game?.name}</h2>
       <div className="flex gap-5 items-center pb-5">
         <RenderPlatform platforms={game?.parent_platforms!} />
@@ -27,13 +27,19 @@ const GameDetail = async ({ searchParams }: { searchParams?: { [key: string]: st
       </div>
       <div className="w-full h-[400px] relative">
         {game?.background_image ? (
-          <Image src={game?.background_image} fill style={{ objectFit: "cover" }} alt="game background" />
+          <Image
+            src={game?.background_image}
+            fill
+            style={{ objectFit: "cover" }}
+            sizes="(min-width: 780px) calc(100vw - 320px), calc(100vw - 80px)"
+            alt="game background"
+          />
         ) : (
           <Image
             className="rounded-t-md"
             src="https://theokellogroup.com/wp-content/plugins/dozent/assets/images/placeholder.svg"
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(min-width: 780px) calc(100vw - 320px), calc(100vw - 80px)"
             alt="game bg"
           />
         )}

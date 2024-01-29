@@ -17,7 +17,7 @@ const getReddit = async (id: number) => {
 const Reddit = async ({ id }: { id: number }) => {
   const response = await getReddit(id);
   const redditPosts: IRedditPosts[] = response.results;
-  console.log(redditPosts);
+
   return (
     <div className="width-full flex gap-3 flex-wrap">
       {redditPosts?.map((post) =>

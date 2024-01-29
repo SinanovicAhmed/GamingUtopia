@@ -22,12 +22,7 @@ const Achievments = async ({ id }: { id: number }) => {
       {achievments?.results.map((achievment) => (
         <div className="group w-20 overflow-clip" key={achievment.id}>
           <div className="w-20 h-20 relative">
-            <Image
-              src={achievment.image}
-              alt="achievment logo"
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
+            <Image src={achievment.image} alt="achievment logo" fill sizes="80px" />
           </div>
           <h2 className="truncate text-sm text-white">{achievment.name}</h2>
           <p className="opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto text-[10px] text-gray-500 transition-all">

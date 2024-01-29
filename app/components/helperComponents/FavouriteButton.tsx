@@ -52,6 +52,8 @@ const FavouriteButton = ({ favouriteID, game }: IProps) => {
     }
   };
 
+  if (!session) return null;
+
   return (
     <>
       {favouriteID ? (
